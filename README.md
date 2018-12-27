@@ -1,3 +1,7 @@
+Forked by jenswilly to avoid dependency on `https://github.com/RobotnikAutomation/robotnik_msgs`.
+
+-----
+
 # imu_vmu931
 
 ROS package to for the imu VMU931 from [Variense](https://variense.com/product/vmu931/).
