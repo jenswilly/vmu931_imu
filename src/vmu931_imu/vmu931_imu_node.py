@@ -126,9 +126,9 @@ class Vmu931Node:
 		self.t_publish_state = threading.Timer(self.publish_state_timer, self.publishROSstate)
 		self._imu_msg = Imu()
 		self._imu_msg.header.frame_id = self._frame_id
-		self._imu_msg.orientation_covariance = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-		self._imu_msg.angular_velocity_covariance = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-		self._imu_msg.linear_acceleration_covariance = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+		self._imu_msg.orientation_covariance = args[ 'covariance_orientation' ]
+		self._imu_msg.angular_velocity_covariance = args[ 'covariance_angular_velocity' ]
+		self._imu_msg.linear_acceleration_covariance = args[ 'covariance_linear_acceleration' ]
 		
 		self._gyro_msg = Vector3Stamped()
 		self._gyro_msg.header.frame_id = self._frame_id
@@ -670,9 +670,9 @@ def main():
 	  'euler': True,
 	  'heading': True,
        # Covariances defaults to 0.0 meaning "unknown"
-      'covariance_linear_accel': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      'covariance_linear_acceleration': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
       'covariance_angular_velocity': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-      'covariance_velocity': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      'covariance_orientation': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 	}
 	
 	args = {}
