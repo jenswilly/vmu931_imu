@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   genmsg
-  robotnik_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -36,7 +35,6 @@ add_message_files(
 generate_messages(
    DEPENDENCIES
    std_msgs
-   robotnik_msgs
 )
 
 
