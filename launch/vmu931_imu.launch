@@ -22,21 +22,9 @@
 	<param name="heading" value="$(arg heading)"/>
 	
 	<!-- Covariance matrices for Imu message -->
-	<rosparam param="covariance_linear_acceleration">
-		[0.01, 0.0, 0.0, 
-		 0.0, 0.01, 0.0, 
-		 0.0, 0.0, 0.01]
-	</rosparam>
-	<rosparam param="covariance_angular_velocity">
-		[0.0, 0.0, 0.0, 
-		 0.0, 0.0, 0.0, 
-		 0.0, 0.0, 0.0]
-	</rosparam>
-	<rosparam param="covariance_orientation">
-		[0.0, 0.0, 0.0, 
-		 0.0, 0.0, 0.0, 
-		 0.0, 0.0, 0.0]
-	 </rosparam>
+	<rosparam param="covariance_linear_acceleration">[0.0001875, 0.0, 0.0, 0.0, 0.0001786, 0.0, 0.0, 0.0, 0.0006504]</rosparam>
+	<rosparam param="covariance_angular_velocity">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</rosparam>
+	<rosparam param="covariance_orientation">[0.0000014, 0.0, 0.0, 0.0, 0.0000014, 0.0, 0.0, 0.0, 0.0000014]</rosparam>
 </node>
 	
 </launch>
