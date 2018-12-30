@@ -2,7 +2,8 @@
 <package format="2">
   <name>vmu931_imu</name>
   <version>1.0.0</version>
-  <description>The vmu931_imu package</description>
+  <description>The vmu931_imu package. Forked from https://github.com/RobotnikAutomation/vmu931_imu. Removed dependence of robotnik_msgs and added covariance parameters.</description>
+  <author email="jens@jwrobotics.com">Jens Willy Johannsen</author>
 
   <maintainer email="jmnavarrete@robotnik.es">Juan Manuel Navarrete</maintainer>
   <maintainer email="rnavarro@robotnik.es">Román Navarro</maintainer>
@@ -30,7 +31,6 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>message_runtime</exec_depend>
-  <depend>robotnik_msgs</depend>
   <depend>genmsg</depend>
 
   <!-- The export tag contains other, unspecified, tags -->

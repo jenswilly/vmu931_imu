@@ -36,7 +36,6 @@ import rospy
 
 import time, threading
 
-from robotnik_msgs.msg import State
 from sensor_msgs.msg import Imu
 from geometry_msgs.msg import Vector3Stamped, QuaternionStamped
 from std_msgs.msg import Float32
@@ -54,6 +53,17 @@ VMU931_MODE_CUSTOM = 'custom'
 VMU931_CALIBRATION_DURATION = 5.0
 
 
+# States originally from robotnik_msgs.State
+class State:
+    INIT_STATE = 100
+    STANDBY_STATE = 200
+    READY_STATE = 300
+    EMERGENCY_STATE = 400
+    FAILURE_STATE = 500
+    SHUTDOWN_STATE = 600
+    UNKOWN_STATE = 700
+
+    
 # Class Template of Robotnik component for Pyhton
 class Vmu931Node:
 	
@@ -629,17 +639,6 @@ class Vmu931Node:
 			
 			self.t_publish_state = threading.Timer(self.publish_state_timer, self.publishROSstate)
 			self.t_publish_state.start()
-	
-	"""
-	def topicCb(self, msg):
-		'''
-			Callback for inelfe_video_manager state
-			@param msg: received message
-			@type msg: std_msgs/Int32
-		'''
-		# DEMO
-		rospy.loginfo('Vmu931Node:topicCb')
-   """	
 	
 	def calibrationServiceCb(self, req):
 		'''
