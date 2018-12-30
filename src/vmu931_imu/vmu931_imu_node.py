@@ -41,7 +41,8 @@ from geometry_msgs.msg import Vector3Stamped, QuaternionStamped
 from std_msgs.msg import Float32
 import vmu931_driver as vmu
 import dato
-from vmu931_imu.msg import State as VmuState
+from vmu931_imu.msg import State
+from vmu931_imu.msg import VmuState
 import math
 from std_srvs.srv import Trigger
 
@@ -52,16 +53,6 @@ VMU931_MODE_GYROSCOPE = 'gyro-accel-mag'
 VMU931_MODE_CUSTOM = 'custom'
 VMU931_CALIBRATION_DURATION = 5.0
 
-
-# States originally from robotnik_msgs.State
-class State:
-    INIT_STATE = 100
-    STANDBY_STATE = 200
-    READY_STATE = 300
-    EMERGENCY_STATE = 400
-    FAILURE_STATE = 500
-    SHUTDOWN_STATE = 600
-    UNKOWN_STATE = 700
 
     
 # Class Template of Robotnik component for Pyhton

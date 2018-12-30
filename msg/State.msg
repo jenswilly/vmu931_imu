@@ -1,19 +1,17 @@
-robotnik_msgs/State state
-bool gyroscope_status
-bool accelerometer_status
-bool magnetometer_status
-# flag active during the calibration
-bool calibrating
-# working mode in terms of the type of data is being streamed
-# quaternion-euler-heading, gyro-accel-mag, custom
-string mode
-# sensor output rate
-int32 output_rate
-# flags to show what info is being streamed by the sensor
-bool quaternion_streaming
-bool euler_streaming
-bool heading_streaming
-bool gyro_streaming
-bool accel_streaming
-bool magnet_streaming
+# constants
+int32 INIT_STATE = 100
+int32 STANDBY_STATE = 200
+int32 READY_STATE = 300
+int32 EMERGENCY_STATE = 400
+int32 FAILURE_STATE = 500
+int32 SHUTDOWN_STATE = 600
+int32 UNKOWN_STATE = 700
 
+# state of the component
+int32 state
+# desired control loop frecuency
+float32 desired_freq
+# real frecuency 
+float32 real_freq
+# Description of the state
+string state_description
