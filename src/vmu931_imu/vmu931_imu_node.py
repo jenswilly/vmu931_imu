@@ -669,6 +669,10 @@ def main():
 	  'quaternion': True,
 	  'euler': True,
 	  'heading': True,
+       # Covariances defaults to 0.0 meaning "unknown"
+      'covariance_linear_accel': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      'covariance_angular_velocity': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      'covariance_velocity': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 	}
 	
 	args = {}

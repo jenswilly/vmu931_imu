@@ -20,6 +20,9 @@
 	<param name="accelerometer" value="$(arg accelerometer)"/>
 	<param name="magnetometer" value="$(arg magnetometer)"/>
 	<param name="heading" value="$(arg heading)"/>
+	
+	<!-- Covariance matrices for Imu message -->
+	<rosparam param="covariance_linear_accel">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</rosparam>
 </node>
 	
 </launch>
