@@ -469,9 +469,9 @@ class Vmu931Node:
 					
 			if msg == vmu.ACCELEROMETERS:
 				self._accel_msg.header.stamp = current_time
-				self._accel_msg.vector.x = acc.x*9.81
-				self._accel_msg.vector.y = acc.y*9.81
-				self._accel_msg.vector.z = acc.z*9.81
+				self._accel_msg.vector.x = acc.x*9.82
+				self._accel_msg.vector.y = acc.y*9.82
+				self._accel_msg.vector.z = acc.z*9.82
 				self._accel_publisher.publish(self._accel_msg)
 					
 			if msg == vmu.MAGNETOMETERS:
@@ -496,13 +496,13 @@ class Vmu931Node:
 			
 				self._imu_msg.header.stamp = current_time
 				#print dir(self._imu_msg.angular_velocity) 
-				self._imu_msg.angular_velocity.x = 0
-				self._imu_msg.angular_velocity.y = 0
-				self._imu_msg.angular_velocity.z = 0
+				self._imu_msg.angular_velocity.x = math.radians(gy.x)
+				self._imu_msg.angular_velocity.y = math.radians(gy.y)
+				self._imu_msg.angular_velocity.z = math.radians(gy.z)
 				
-				self._imu_msg.linear_acceleration.x = 0
-				self._imu_msg.linear_acceleration.y = 0
-				self._imu_msg.linear_acceleration.z = 0
+				self._imu_msg.linear_acceleration.x = acc.x*9.82
+				self._imu_msg.linear_acceleration.y = acc.y*9.82
+				self._imu_msg.linear_acceleration.z = acc.z*9.82
 				
 				self._imu_msg.orientation.x = quat.x
 				self._imu_msg.orientation.y = quat.y
