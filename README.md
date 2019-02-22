@@ -1,5 +1,11 @@
 Forked by jenswilly to avoid dependency on `https://github.com/RobotnikAutomation/robotnik_msgs`.
 
+Modifications from original:
+
+1. Removed dependency on `robotnik_msgs` package
+2. Added covariance parameters
+3. Added `linear_acceleration` and `angular_velocity` to IMU messages
+
 -----
 
 # imu_vmu931
