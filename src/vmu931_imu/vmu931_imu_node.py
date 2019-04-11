@@ -495,17 +495,18 @@ class Vmu931Node:
 				self._quaternion_publisher.publish(self._quaternion_msg)
 			
 				self._imu_msg.header.stamp = current_time
-				#print dir(self._imu_msg.angular_velocity) 
-				self._imu_msg.angular_velocity.x = math.radians(gy.x)
-				self._imu_msg.angular_velocity.y = math.radians(gy.y)
+
+				# NOTE: due to the mounting, we report X as Y rotations and -Y as X
+				self._imu_msg.angular_velocity.x = math.radians(-gy.y)
+				self._imu_msg.angular_velocity.y = math.radians(gy.x)
 				self._imu_msg.angular_velocity.z = math.radians(gy.z)
 				
-				self._imu_msg.linear_acceleration.x = acc.x*9.82
-				self._imu_msg.linear_acceleration.y = acc.y*9.82
+				self._imu_msg.linear_acceleration.x = -acc.y*9.82
+				self._imu_msg.linear_acceleration.y = acc.x*9.82
 				self._imu_msg.linear_acceleration.z = acc.z*9.82
 				
-				self._imu_msg.orientation.x = quat.x
-				self._imu_msg.orientation.y = quat.y
+				self._imu_msg.orientation.x = -quat.y
+				self._imu_msg.orientation.y = quat.x
 				self._imu_msg.orientation.z = quat.z
 				self._imu_msg.orientation.w = quat.w
 				
